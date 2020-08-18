@@ -160,6 +160,11 @@
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
   </nav>
 </div>
   <div class="sidebar-button animated"><i class="fa fa-comment"></i>
@@ -225,9 +230,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-08-16 18:16:17 / Modified: 18:18:18" itemprop="dateCreated datePublished" datetime="2020-08-16T18:16:17+08:00">2020-08-16</time>
+              <time title="Created: 2020-08-16 18:16:17" itemprop="dateCreated datePublished" datetime="2020-08-16T18:16:17+08:00">2020-08-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-18 09:27:27" itemprop="dateModified" datetime="2020-08-18T09:27:27+08:00">2020-08-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hyperledger/" itemprop="url" rel="index"><span itemprop="name">Hyperledger</span></a>
+                </span>
             </span>
 
           
@@ -262,32 +282,14 @@
     <div class="post-body" itemprop="articleBody">
           <h2 id="Hyperledger-fabric-环境搭建总结"><a href="#Hyperledger-fabric-环境搭建总结" class="headerlink" title="Hyperledger fabric 环境搭建总结"></a>Hyperledger fabric 环境搭建总结</h2><ul>
 <li><p>该环境搭建由于国内墙的原因以及下载速度关系十分艰辛，主要结合<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zongmin/p/11635686.html">Hyperledger1.4中的binary手动下载</a>以及<a target="_blank" rel="noopener" href="https://www.cnblogs.com/always-kaixuan/p/12398251.html">Hyperledger2.0前置环境条件搭建</a>以及<a target="_blank" rel="noopener" href="https://hyperledger-fabric.readthedocs.io/en/release-2.2/test_network.html">Hyperledger fabric 发行版2.2的官方文档</a>最终成功搭建了Hyperledger fabric v2.2以及fabric-ca1.4.8的环境，并成功跑通了test-network中的例子。</p>
-</li>
-<li><p>git, curl, wget安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git || sudo apt-get install curl ||sudo apt-get install wget</span><br></pre></td></tr></table></figure></li>
-<li><p>docker安装<br>参考<a target="_blank" rel="noopener" href="https://docs.docker.com/install/linux/docker-ce/ubuntu">官方文档</a> 中的说明安装即可，若觉得速度慢可以配置apt镜像<br>docker安装完成之后配置docker<a target="_blank" rel="noopener" href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors">阿里云镜像</a></p>
-</li>
-<li><p>docker-compose安装<br>由于docker-compose速度太慢，通过pip来安装要快很多<br>① sudo apt install python-pip   #首先安装pip<br>② sudo pip install docker-compose<br>③ docker-compose –version   #查看版本</p>
-</li>
-<li><p>golang安装</p>
-</li>
-</ul>
-<ol>
-<li>根据<a target="_blank" rel="noopener" href="http://docscn.studygolang.com/doc/install">golang中文社区</a> 文档以及 <a target="_blank" rel="noopener" href="http://docscn.studygolang.com/doc/code.html">golang标准工作区搭建</a> 对本地golang环境进行配置</li>
-<li>通过<a target="_blank" rel="noopener" href="https://goproxy.cn/">golang包管理镜像站</a> 中的说明对本地的golang进行goproxy配置，否则在使用go工具时会没有反应</li>
-</ol>
-<ul>
-<li>fabric, fabric-sample仓库拉取，二进制数据下载，以及docker镜像拉取</li>
-</ul>
-<ol>
-<li>自己从GitHub上拉取fabric和fabric-samples的镜像。然后切换到自己想要的版本。</li>
-<li>然后在fabric/core/scripts中找到bootstrap.sh的文档，在最后输出出来需要下载的fabric, fabric-ca的二进制下载链接，然后打开用浏览器下载，将下载到的两个压缩包解压之后的bin文件下的文件放到一起，然后把两个文件夹都放到fabric-samples的路径下，并将bin目录添加到$PATH中。这里可以参考<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zongmin/p/11635686.html">手动下载二进制代码</a> 。</li>
-<li>最后通过<code>bash bootstrap.sh -d</code> 来自动拉取docker镜像</li>
-</ol>
-<ul>
-<li>testnetwork测试（<a target="_blank" rel="noopener" href="https://hyperledger-fabric.readthedocs.io/en/release-2.2/test_network.html">根据官网提供的教程</a> ）</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/08/16/Hyperledger-fabric/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -334,6 +336,22 @@
 
               <time title="Created: 2020-08-16 17:05:15" itemprop="dateCreated datePublished" datetime="2020-08-16T17:05:15+08:00">2020-08-16</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-18 09:28:42" itemprop="dateModified" datetime="2020-08-18T09:28:42+08:00">2020-08-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/test/" itemprop="url" rel="index"><span itemprop="name">test</span></a>
+                </span>
+            </span>
 
           
             <span id="/2020/08/16/hello-world/" class="post-meta-item leancloud_visitors" data-flag-title="Hello World" title="Views">
@@ -366,19 +384,14 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/08/16/hello-world/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
