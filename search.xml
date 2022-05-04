@@ -2,54 +2,6 @@
 <search> 
   
   
-    
-    <entry>
-      <title>linear_table</title>
-      <link href="/2021/08/16/linear-table/"/>
-      <url>/2021/08/16/linear-table/</url>
-      
-        <content type="html"><![CDATA[<h2 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h2><p>定义：由同类型数据元素构成有序序列的线性结构</p><h3 id="抽象数据类型描述"><a href="#抽象数据类型描述" class="headerlink" title="抽象数据类型描述"></a>抽象数据类型描述</h3><p>类名称：线性表</p><p>数据对象集：线性表是n个元素构成的有序序列($a_1, a_2, a_3… a_n$)</p><p>操作集：对于线性表L$\in$List, 整数 i 表示位置，元素 X$\in$Elementype一般有如下操作集</p><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">List MakeEmpty() &#x2F;&#x2F;初始化空线性表L Elementype Findkth(int k, List L) &#x2F;&#x2F;根据位序k找到对应元素int Find(Elementype X, List L) &#x2F;&#x2F;根据元素查找位置void Insert(Elementype X, List L, int i) &#x2F;&#x2F;在对应位置插入指定元素 void Delete(List L, int i) &#x2F;&#x2F;删除指定位置的元素int Length(List L) &#x2F;&#x2F;获取线性表长度<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h3 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h3><ul><li>顺序存储（利用数组的连续存储空间顺序存放线性表的元素）</li></ul><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;&#x2F;数据对象typedef struct LNode *List;struct LNode&#123;  Elementype Data[MAXSIZE];  int Last; &#x2F;&#x2F;数组中使用过的最后一个元素的下标&#125;;&#x2F;&#x2F;对应操作集List MakeEmpty()&#123;  List Ptrl;  Ptrl &#x3D; (List)malloc(sizeof(struct LNode));  Ptrl-&gt;Last &#x3D; -1;  return Ptrl;&#125;Elementype Findkth(int k, List PtrL)&#123;  return PtrL-&gt;Data[--k];&#125;int Find(Elementype X, List PtrL)&#123;  int i &#x3D; 0;  while(i&lt;&#x3D;PtrL-&gt;Last &amp;&amp; PtrL-&gt;Data[i]!&#x3D;X)&#123;    i++;  &#125;  if(i&gt;PtrL-&gt;Last) return -1;  else return ++i;&#125;void Insert(Elementype X, int i, List PtrL)&#123;  if(PtrL-&gt;Last&#x3D;&#x3D;MAXSIZE-1)&#123;    printf(&quot;表满&quot;);    return;  &#125;  if(i&lt;1||i&gt;PtrL-&gt;Last+2)&#123;    printf(&quot;错误的位置&quot;);    return;  &#125;  for(int j &#x3D; PtrL-&gt;Last; j&gt;i-1; j--)&#123;    PtrL-&gt;Data[j+1] &#x3D; PtrL-&gt;Data[j];  &#125;  PtrL-&gt;Data[i-1] &#x3D; X;  PtrL-&gt;Last++;  return&#125;void Delete(Elemetype X, int i, List PtrL)&#123;  if(i&lt;1||i&gt;PtrL-&gt;Last+1)&#123;    printf(&quot;错误的删除位置&quot;);    return;  &#125;  for(int j &#x3D; i; j&lt;PtrL-&gt;Last; j++)&#123;    PtrL-&gt;Data[j-1] &#x3D; PtrL-&gt;Data[j];   &#125;  PtrL-&gt;Last--;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><ul><li>链表实现（不要求逻辑上相邻的两个元素物理地址上也相邻）</li></ul><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">typedef struct LNode *List;struct LNode&#123;  Elementype Data;  List Next;&#125;List MakeList()&#123;  List PtrL;  PtrL &#x3D; (List)malloc(sizeof(struct LNode));  return PtrL;&#125;int Findkth(int i, List PtrL)&#123;  List p &#x3D; PtrL;  int j &#x3D; 1;  while(p!&#x3D;NULL&amp;&amp;j&lt;i)&#123;    p &#x3D; p-&gt;Next;    j++;  &#125;  if(j&#x3D;&#x3D;i-1)&#123;    return p;  &#125;else&#123;    return NULL;  &#125;  &#125;int Find(Elementype X, List PtrL)&#123;  List p &#x3D; PtrL;  int i &#x3D; 0;  while(p!&#x3D;NULL&amp;&amp;p-&gt;Data!&#x3D;X)&#123;    i++;    p &#x3D; p-&gt;Next;  &#125;  if(p&#x3D;&#x3D;NULL)return -1;  else return i++;&#125;List Insert(Elementype X, List PtrL, int i)&#123;  List s, p;  if(i &#x3D;&#x3D; 1)&#123;    s &#x3D; (List)malloc(struct LNode);    s-&gt;Next &#x3D; PtrL;    s-&gt;Data &#x3D; X;    return s;  &#125;  p &#x3D; Findkth(i, PtrL);  if(p&#x3D;&#x3D;NULL) &#123;    printf(&quot;参数i错误&quot;);    return NULL;  &#125;else&#123;    s &#x3D; (List)malloc(struct LNode);    s-&gt;Next &#x3D; p-&gt;Next;    p-&gt;Next &#x3D; s;    return PtrL;  &#125;&#125;List Delete(List PtrL, int i)&#123;  List s, p;  if(i&#x3D;&#x3D;1) &#123;    s &#x3D; PtrL;    if(PtrL!&#x3D;NULL) PtrL &#x3D; PtrL-&gt;Next;    else return NULL;    free(s);    return PtrL;  &#125;  p &#x3D; (List)malloc(struct LNode);  p &#x3D; Findkth(i-1, PtrL);  if(p-&gt;Next &#x3D;&#x3D; NULL||p &#x3D;&#x3D; NULL) &#123;    printf(&quot;错误参数i&quot;);    return NULL;  &#125;else&#123;    s &#x3D; p-&gt;Next;    p-&gt;Next &#x3D; p-Next-&gt;Next;    free(s);    return PtrL;     &#125;&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 线性表 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>基本数据结构实现</title>
-      <link href="/2021/08/08/ji-ben-shu-ju-jie-gou-shi-xian/"/>
-      <url>/2021/08/08/ji-ben-shu-ju-jie-gou-shi-xian/</url>
-      
-        <content type="html"><![CDATA[<h3 id="三大基本数据结构抽象及C-实现"><a href="#三大基本数据结构抽象及C-实现" class="headerlink" title="三大基本数据结构抽象及C++实现"></a>三大基本数据结构抽象及C++实现</h3>]]></content>
-      
-      
-      <categories>
-          
-          <category> 数据结构 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 线性表 </tag>
-            
-            <tag> 树 </tag>
-            
-            <tag> 图 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
   
   
 </search>
