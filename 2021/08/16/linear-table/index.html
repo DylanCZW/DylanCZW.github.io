@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="基本数据结构实现, Dylan">
+    <meta name="keywords" content="linear_table, Dylan">
     <meta name="description" content="Dylan的知识库">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>基本数据结构实现 | Dylan</title>
+    <title>linear_table | Dylan</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -432,12 +432,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">基本数据结构实现</h1>
+                    <h1 class="description center-align post-title">linear_table</h1>
                 </div>
             </div>
         </div>
@@ -557,27 +557,10 @@
                                 <span class="chip bg-color">线性表</span>
                             </a>
                         
-                            <a href="/tags/%E6%A0%91/">
-                                <span class="chip bg-color">树</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%9B%BE/">
-                                <span class="chip bg-color">图</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
-                                数据结构
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -586,28 +569,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-08
+                    2021-08-16
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-08-08
+                    2021-08-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    14
+                    799
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -630,7 +613,169 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="三大基本数据结构抽象及C-实现"><a href="#三大基本数据结构抽象及C-实现" class="headerlink" title="三大基本数据结构抽象及C++实现"></a>三大基本数据结构抽象及C++实现</h3>
+                <h2 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h2><p>定义：由同类型数据元素构成有序序列的线性结构</p>
+<h3 id="抽象数据类型描述"><a href="#抽象数据类型描述" class="headerlink" title="抽象数据类型描述"></a>抽象数据类型描述</h3><p>类名称：线性表</p>
+<p>数据对象集：线性表是n个元素构成的有序序列($a_1, a_2, a_3… a_n$)</p>
+<p>操作集：对于线性表L$\in$List, 整数 i 表示位置，元素 X$\in$Elementype一般有如下操作集</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">List MakeEmpty() &#x2F;&#x2F;初始化空线性表L 
+Elementype Findkth(int k, List L) &#x2F;&#x2F;根据位序k找到对应元素
+int Find(Elementype X, List L) &#x2F;&#x2F;根据元素查找位置
+void Insert(Elementype X, List L, int i) &#x2F;&#x2F;在对应位置插入指定元素 
+void Delete(List L, int i) &#x2F;&#x2F;删除指定位置的元素
+int Length(List L) &#x2F;&#x2F;获取线性表长度
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<hr>
+<h3 id="实现方式"><a href="#实现方式" class="headerlink" title="实现方式"></a>实现方式</h3><ul>
+<li>顺序存储（利用数组的连续存储空间顺序存放线性表的元素）</li>
+</ul>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">&#x2F;&#x2F;数据对象
+typedef struct LNode *List;
+struct LNode&#123;
+  Elementype Data[MAXSIZE];
+  int Last; &#x2F;&#x2F;数组中使用过的最后一个元素的下标
+&#125;;
+&#x2F;&#x2F;对应操作集
+List MakeEmpty()&#123;
+  List Ptrl;
+  Ptrl &#x3D; (List)malloc(sizeof(struct LNode));
+  Ptrl-&gt;Last &#x3D; -1;
+  return Ptrl;
+&#125;
+
+Elementype Findkth(int k, List PtrL)&#123;
+  return PtrL-&gt;Data[--k];
+&#125;
+
+int Find(Elementype X, List PtrL)&#123;
+  int i &#x3D; 0;
+  while(i&lt;&#x3D;PtrL-&gt;Last &amp;&amp; PtrL-&gt;Data[i]!&#x3D;X)&#123;
+    i++;
+  &#125;
+  if(i&gt;PtrL-&gt;Last) return -1;
+  else return ++i;
+&#125;
+
+void Insert(Elementype X, int i, List PtrL)&#123;
+  if(PtrL-&gt;Last&#x3D;&#x3D;MAXSIZE-1)&#123;
+    printf(&quot;表满&quot;);
+    return;
+  &#125;
+  if(i&lt;1||i&gt;PtrL-&gt;Last+2)&#123;
+    printf(&quot;错误的位置&quot;);
+    return;
+  &#125;
+  for(int j &#x3D; PtrL-&gt;Last; j&gt;i-1; j--)&#123;
+    PtrL-&gt;Data[j+1] &#x3D; PtrL-&gt;Data[j];
+  &#125;
+  PtrL-&gt;Data[i-1] &#x3D; X;
+  PtrL-&gt;Last++;
+  return
+&#125;
+
+void Delete(Elemetype X, int i, List PtrL)&#123;
+  if(i&lt;1||i&gt;PtrL-&gt;Last+1)&#123;
+    printf(&quot;错误的删除位置&quot;);
+    return;
+  &#125;
+  for(int j &#x3D; i; j&lt;PtrL-&gt;Last; j++)&#123;
+    PtrL-&gt;Data[j-1] &#x3D; PtrL-&gt;Data[j]; 
+  &#125;
+  PtrL-&gt;Last--;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<ul>
+<li>链表实现（不要求逻辑上相邻的两个元素物理地址上也相邻）</li>
+</ul>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">typedef struct LNode *List;
+struct LNode&#123;
+  Elementype Data;
+  List Next;
+&#125;
+
+List MakeList()&#123;
+  List PtrL;
+  PtrL &#x3D; (List)malloc(sizeof(struct LNode));
+  return PtrL;
+&#125;
+
+int Findkth(int i, List PtrL)&#123;
+  List p &#x3D; PtrL;
+  int j &#x3D; 1;
+  while(p!&#x3D;NULL&amp;&amp;j&lt;i)&#123;
+    p &#x3D; p-&gt;Next;
+    j++;
+  &#125;
+  if(j&#x3D;&#x3D;i-1)&#123;
+    return p;
+  &#125;else&#123;
+    return NULL;
+  &#125;  
+&#125;
+
+int Find(Elementype X, List PtrL)&#123;
+  List p &#x3D; PtrL;
+  int i &#x3D; 0;
+  while(p!&#x3D;NULL&amp;&amp;p-&gt;Data!&#x3D;X)&#123;
+    i++;
+    p &#x3D; p-&gt;Next;
+  &#125;
+  if(p&#x3D;&#x3D;NULL)return -1;
+  else return i++;
+&#125;
+
+List Insert(Elementype X, List PtrL, int i)&#123;
+  List s, p;
+  if(i &#x3D;&#x3D; 1)&#123;
+    s &#x3D; (List)malloc(struct LNode);
+    s-&gt;Next &#x3D; PtrL;
+    s-&gt;Data &#x3D; X;
+    return s;
+  &#125;
+  p &#x3D; Findkth(i, PtrL);
+  if(p&#x3D;&#x3D;NULL) &#123;
+    printf(&quot;参数i错误&quot;);
+    return NULL;
+  &#125;else&#123;
+    s &#x3D; (List)malloc(struct LNode);
+    s-&gt;Next &#x3D; p-&gt;Next;
+    p-&gt;Next &#x3D; s;
+    return PtrL;
+  &#125;
+&#125;
+
+List Delete(List PtrL, int i)&#123;
+  List s, p;
+  if(i&#x3D;&#x3D;1) &#123;
+    s &#x3D; PtrL;
+    if(PtrL!&#x3D;NULL) PtrL &#x3D; PtrL-&gt;Next;
+    else return NULL;
+    free(s);
+    return PtrL;
+  &#125;
+  p &#x3D; (List)malloc(struct LNode);
+  p &#x3D; Findkth(i-1, PtrL);
+  if(p-&gt;Next &#x3D;&#x3D; NULL||p &#x3D;&#x3D; NULL) &#123;
+    printf(&quot;错误参数i&quot;);
+    return NULL;
+  &#125;else&#123;
+    s &#x3D; p-&gt;Next;
+    p-&gt;Next &#x3D; p-Next-&gt;Next;
+    free(s);
+    return PtrL;   
+  &#125;
+&#125;
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
                 
             </div>
             <hr/>
@@ -656,7 +801,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/08/08/ji-ben-shu-ju-jie-gou-shi-xian/">http://example.com/2021/08/08/ji-ben-shu-ju-jie-gou-shi-xian/</a>
+                    <a href="http://example.com/2021/08/16/linear-table/">http://example.com/2021/08/16/linear-table/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -696,14 +841,6 @@
                             
                                 <a href="/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/">
                                     <span class="chip bg-color">线性表</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%A0%91/">
-                                    <span class="chip bg-color">树</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%9B%BE/">
-                                    <span class="chip bg-color">图</span>
                                 </a>
                             
                         </div>
@@ -875,9 +1012,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/08/16/linear-table/">
                     <div class="card-image">
@@ -895,9 +1033,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -906,6 +1044,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -921,7 +1060,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2021/08/08/ji-ben-shu-ju-jie-gou-shi-xian/">
@@ -955,7 +1094,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
