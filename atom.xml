@@ -3,11 +3,11 @@
   <title>Dylan</title>
   
   <subtitle>知识星球</subtitle>
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://dylanczw.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://dylanczw.github.io/"/>
   <updated>2022-05-04T12:52:08.043Z</updated>
-  <id>http://example.com/</id>
+  <id>https://dylanczw.github.io/</id>
   
   <author>
     <name>Dylan_czw</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>常见背包问题</title>
-    <link href="http://example.com/2022/05/04/chang-jian-bei-bao-wen-ti/"/>
-    <id>http://example.com/2022/05/04/chang-jian-bei-bao-wen-ti/</id>
+    <link href="https://dylanczw.github.io/2022/05/04/chang-jian-bei-bao-wen-ti/"/>
+    <id>https://dylanczw.github.io/2022/05/04/chang-jian-bei-bao-wen-ti/</id>
     <published>2022-05-04T09:16:47.000Z</published>
     <updated>2022-05-04T12:52:08.043Z</updated>
     
@@ -34,12 +34,12 @@
     
     
     
-    <category term="算法基础" scheme="http://example.com/categories/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/"/>
+    <category term="算法基础" scheme="https://dylanczw.github.io/categories/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/"/>
     
     
-    <category term="背包问题" scheme="http://example.com/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
+    <category term="背包问题" scheme="https://dylanczw.github.io/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
     
-    <category term="dp" scheme="http://example.com/tags/dp/"/>
+    <category term="dp" scheme="https://dylanczw.github.io/tags/dp/"/>
     
   </entry>
   
