@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="分析阅读, Dylan">
+    <meta name="keywords" content="树的前中序遍历迭代法实现, Dylan">
     <meta name="description" content="Dylan的知识库">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>分析阅读 | Dylan</title>
+    <title>树的前中序遍历迭代法实现 | Dylan</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -325,12 +325,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">分析阅读</h1>
+                    <h1 class="description center-align post-title">树的前中序遍历迭代法实现</h1>
                 </div>
             </div>
         </div>
@@ -446,12 +446,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/">
-                                <span class="chip bg-color">如何阅读一本书</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%88%86%E6%9E%90%E9%98%85%E8%AF%BB/">
-                                <span class="chip bg-color">分析阅读</span>
+                            <a href="/tags/%E6%A0%91-%E9%81%8D%E5%8E%86/">
+                                <span class="chip bg-color">树 - 遍历</span>
                             </a>
                         
                     </div>
@@ -462,8 +458,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%BB%E4%B9%A6/" class="post-category">
-                                读书
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                数据结构
                             </a>
                         
                     </div>
@@ -475,21 +471,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-05-14
+                    2022-05-28
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-05-14
+                    2022-05-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    477
+                    501
                 </div>
                 
 
@@ -519,44 +515,39 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="阅读的第三层次"><a href="#阅读的第三层次" class="headerlink" title="阅读的第三层次"></a>阅读的第三层次</h3><hr>
-<h4 id="分析阅读"><a href="#分析阅读" class="headerlink" title="分析阅读"></a>分析阅读</h4><p>作为如何阅读一本书中作者最重点介绍的一个层次，也是我们所需要重点去学会的一种阅读层次，在这一层次上我们作为读者需要完成以下三个阶段</p>
-<ol>
-<li>找出一本书在谈论什么<ul>
-<li>首先按照书的类型和主题进行分类</li>
-<li>然后通过自己的语言用一段简短的话表述这本书在谈论什么</li>
-<li>将书中的主要部分按照顺序和关联性列出一个大纲出来，对于每一部分也另外单独列一个大纲出来</li>
-<li>可以通过前面这些的梳理得出一个初步的判断作者想要解决的问题</li>
-</ul>
-</li>
-<li>诠释一本书的内容<ul>
-<li>诠释作者的关键字并与他达成共识</li>
-<li>通过最重要的句子来抓住这部分内容中作者的主旨是什么</li>
-<li>知道作者的论述是什么，找出来之后再把它们组织到一起重新架构起来</li>
-<li>确定哪些问题是作者已经解决的问题，而哪些问题是作者未解决的问题，而哪些又是作者自己知道自己并没有解决的问题</li>
-</ul>
-</li>
-<li><p>像是沟通知识一样去评论一本书</p>
-<ol>
-<li><p>以下是礼节性的规则</p>
-<ul>
-<li>只有在自己已经完成了这本书的大纲或者已经能诠释整本书的内容了之后才能去进行这一步骤</li>
-<li>不要争强好胜，非辩到底不可</li>
-<li>说出评论之前得先分清楚真正的知识以及个人观点之间的差别</li>
-</ul>
-</li>
-<li><p>以下是批评的标准</p>
-<ul>
-<li>证明作者知识的不足</li>
-<li>证明作者知识的错误</li>
-<li>证明作者不合逻辑</li>
-<li>证明作者的分析和理由是不正确的</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-
+                <h3 id="树的遍历"><a href="#树的遍历" class="headerlink" title="树的遍历"></a>树的遍历</h3><p>相信大家看到这个博客一般都会知道如何通过递归的方式去遍历一棵树，但是通过迭代的方式往往写出前中后序遍历时比较恼火，最近看到一篇博客上写的比较好，所以就在这里分享一下：</p>
+<h4 id="前序遍历迭代写法"><a href="#前序遍历迭代写法" class="headerlink" title="前序遍历迭代写法"></a>前序遍历迭代写法</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">while</span><span class="token punctuation">(</span>root<span class="token operator">!=</span><span class="token keyword">null</span><span class="token operator">||</span><span class="token operator">!</span>stk<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token comment">//从root节点一直往下走直到左子节点为空</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span>root<span class="token operator">!=</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		res<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		stk<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		root<span class="token operator">=</span>root<span class="token punctuation">.</span>left<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token comment">//此时取出左子节点为空的点，因为左子节点为空了，而且此时节点已经到了树最左边节点的最底部，因此需要换右侧节点开始继续遍历了</span>
+	<span class="token class-name">TreeNode</span> cur<span class="token operator">=</span>stk<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+	root<span class="token operator">=</span>cur<span class="token punctuation">.</span>right<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="中序遍历迭代写法"><a href="#中序遍历迭代写法" class="headerlink" title="中序遍历迭代写法"></a>中序遍历迭代写法</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">while</span><span class="token punctuation">(</span>root<span class="token operator">!=</span><span class="token keyword">null</span><span class="token operator">||</span><span class="token operator">!</span>stk<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span>root<span class="token operator">!=</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		stk<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		root<span class="token operator">=</span>root<span class="token punctuation">.</span>left<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token class-name">TreeNode</span> cur<span class="token operator">=</span>stk<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	res<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>cur<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	root<span class="token operator">=</span>cur<span class="token punctuation">.</span>right<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可以看出来其实中序遍历与前序遍历相比都是同样的不断往左子树走，实在走不动了再往右子树走，但考虑到我们遍历树时实际做的操作其实就是把树遍历的<code>value</code>写入到一个<code>list</code>中去而已，但是如果按照这种方式去写后序遍历迭代时，我们通过<code>stk</code>回退到上一层之后，这个节点就已经被栈<code>pop</code>掉了，按照后序遍历的定义需要遍历完右子树之后再回来把根的值写入到<code>list</code>中，但是此时如何去找右子树的根节点就是一个很麻烦的事。</p>
+<p>但是可以通过另一种思路，后序遍历是左右根的顺序，可以先求出根右左的结果，然后把这个<code>list</code>反转一下就得出结果了，所以后序遍历的迭代写法如下：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">while</span><span class="token punctuation">(</span>root<span class="token operator">!=</span><span class="token keyword">null</span><span class="token operator">||</span><span class="token operator">!</span>stk<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token keyword">while</span><span class="token punctuation">(</span>root<span class="token operator">!=</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+		res<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		stk<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+		root<span class="token operator">=</span>root<span class="token punctuation">.</span>right<span class="token punctuation">;</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token class-name">TreeNode</span> cur<span class="token operator">=</span>stk<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	root<span class="token operator">=</span>cur<span class="token punctuation">.</span>left<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token class-name">Collections</span><span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -582,7 +573,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://dylanczw.github.io/2022/05/14/fen-xi-yue-du/">https://dylanczw.github.io/2022/05/14/fen-xi-yue-du/</a>
+                    <a href="https://dylanczw.github.io/2022/05/28/shu-de-qian-zhong-xu-bian-li-die-dai-fa-shi-xian/">https://dylanczw.github.io/2022/05/28/shu-de-qian-zhong-xu-bian-li-die-dai-fa-shi-xian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -620,12 +611,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6/">
-                                    <span class="chip bg-color">如何阅读一本书</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%88%86%E6%9E%90%E9%98%85%E8%AF%BB/">
-                                    <span class="chip bg-color">分析阅读</span>
+                                <a href="/tags/%E6%A0%91-%E9%81%8D%E5%8E%86/">
+                                    <span class="chip bg-color">树 - 遍历</span>
                                 </a>
                             
                         </div>
@@ -671,9 +658,60 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2022/05/28/shu-de-qian-zhong-xu-bian-li-die-dai-fa-shi-xian/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="树的前中序遍历迭代法实现">
+                        
+                        <span class="card-title">树的前中序遍历迭代法实现</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%A0%91-%E9%81%8D%E5%8E%86/">
+                        <span class="chip bg-color">树 - 遍历</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2022/05/14/jian-shi-yue-du/">
                     <div class="card-image">
@@ -691,9 +729,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-14
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -715,59 +753,6 @@
                     
                     <a href="/tags/%E6%A3%80%E8%A7%86%E9%98%85%E8%AF%BB/">
                         <span class="chip bg-color">检视阅读</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/05/04/chang-jian-bei-bao-wen-ti/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="常见背包问题">
-                        
-                        <span class="card-title">常见背包问题</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-04
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80/" class="post-category">
-                                    算法基础
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">
-                        <span class="chip bg-color">背包问题</span>
-                    </a>
-                    
-                    <a href="/tags/dp/">
-                        <span class="chip bg-color">dp</span>
                     </a>
                     
                 </div>

@@ -6,7 +6,7 @@
   <link href="https://dylanczw.github.io/atom.xml" rel="self"/>
   
   <link href="https://dylanczw.github.io/"/>
-  <updated>2022-05-14T09:39:12.855Z</updated>
+  <updated>2022-05-28T04:20:48.729Z</updated>
   <id>https://dylanczw.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>树的前中序遍历迭代法实现</title>
+    <link href="https://dylanczw.github.io/2022/05/28/shu-de-qian-zhong-xu-bian-li-die-dai-fa-shi-xian/"/>
+    <id>https://dylanczw.github.io/2022/05/28/shu-de-qian-zhong-xu-bian-li-die-dai-fa-shi-xian/</id>
+    <published>2022-05-28T03:38:48.000Z</published>
+    <updated>2022-05-28T04:20:48.729Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;树的遍历&quot;&gt;&lt;a href=&quot;#树的遍历&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="数据结构" scheme="https://dylanczw.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+    <category term="树 - 遍历" scheme="https://dylanczw.github.io/tags/%E6%A0%91-%E9%81%8D%E5%8E%86/"/>
+    
+  </entry>
   
   <entry>
     <title>检视阅读</title>
