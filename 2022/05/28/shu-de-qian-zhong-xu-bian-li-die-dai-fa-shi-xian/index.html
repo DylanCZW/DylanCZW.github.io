@@ -485,7 +485,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    501
+                    509
                 </div>
                 
 
@@ -538,7 +538,7 @@
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>可以看出来其实中序遍历与前序遍历相比都是同样的不断往左子树走，实在走不动了再往右子树走，但考虑到我们遍历树时实际做的操作其实就是把树遍历的<code>value</code>写入到一个<code>list</code>中去而已，但是如果按照这种方式去写后序遍历迭代时，我们通过<code>stk</code>回退到上一层之后，这个节点就已经被栈<code>pop</code>掉了，按照后序遍历的定义需要遍历完右子树之后再回来把根的值写入到<code>list</code>中，但是此时如何去找右子树的根节点就是一个很麻烦的事。</p>
 <p>但是可以通过另一种思路，后序遍历是左右根的顺序，可以先求出根右左的结果，然后把这个<code>list</code>反转一下就得出结果了，所以后序遍历的迭代写法如下：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">while</span><span class="token punctuation">(</span>root<span class="token operator">!=</span><span class="token keyword">null</span><span class="token operator">||</span><span class="token operator">!</span>stk<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+<h4 id="后序遍历迭代写法"><a href="#后序遍历迭代写法" class="headerlink" title="后序遍历迭代写法"></a>后序遍历迭代写法</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">while</span><span class="token punctuation">(</span>root<span class="token operator">!=</span><span class="token keyword">null</span><span class="token operator">||</span><span class="token operator">!</span>stk<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
 	<span class="token keyword">while</span><span class="token punctuation">(</span>root<span class="token operator">!=</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
 		res<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
 		stk<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
